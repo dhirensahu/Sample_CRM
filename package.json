@@ -1,0 +1,23 @@
+{
+  "name": "crmreact",
+  "version": "1.0.0",
+  "description": "sample react crm project",
+  "main": "index.js",
+  "scripts": {
+    "test": "'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhirensahu/Sample_CRM.git"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "dhiren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhirensahu/Sample_CRM/issues"
+  },
+  "homepage": "https://github.com/dhirensahu/Sample_CRM#readme"
+}
