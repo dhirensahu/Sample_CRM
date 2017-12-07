@@ -1,11 +1,9 @@
+/**
+ * Created by dhiren.sahu on 12/07/2017.
+ */
 import React from 'react';
 import {render} from 'react-dom';
 
-import Routes from './components/routes.js';
+import Employee from './components/employee/employee';
 
-import React from 'react';
-
-
-
-
-render(<EmpoyeeComponent/>, document.getElementById('root'));
+render(<Employee/>, document.getElementById('root'));

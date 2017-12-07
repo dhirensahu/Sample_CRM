@@ -1,21 +1,22 @@
-
+/**
+ * Created by dhiren.sahu on 7/4/2017.
+ */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var cleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   entry: path.join(__dirname, '../src/index.js'),
   output: {
     path: path.join(__dirname, '../src/build'),
-    filename: 'bundle.js',
-    publicPath: '/build'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx)$/, //匹配js和jsx文件
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -41,26 +42,20 @@ module.exports = {
       {test: /\.json$/, loader: 'json-loader'}
     ]
   },
-  devServer: {
-    port: 8888,
-    contentBase: path.join(__dirname, '../src'),
-    historyApiFallback: true,
-    inline: true,
-
-  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
       filename: 'bundle.css',
       allChunks: true
-    }),
-    new webpack.ProvidePlugin({
-      Mock: 'mockjs'
     }),
     new cleanWebpackPlugin(['dist'], {
       root: path.join(__dirname, '../src/build/'),
       verbose: true,
       dry: false,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     })
   ]
 };
