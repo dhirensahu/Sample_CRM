@@ -1,5 +1,5 @@
 ### React-Dev-Frame
-- React + React Router + Webpack3 
+- React + Webpack3
 - React UI framework : antd
 
 ### run this project
